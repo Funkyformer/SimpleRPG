@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://15onxwnigxp0"]
+
+[ext_resource type="Script" path="res://Party.gd" id="1_q2v4b"]
+[ext_resource type="PackedScene" uid="uid://ddgnug8dqc4bl" path="res://player_fighter.tscn" id="2_xo4ju"]
+
+[node name="Party" type="Node2D"]
+script = ExtResource("1_q2v4b")
+
+[node name="PlayerFighter" parent="." instance=ExtResource("2_xo4ju")]
+
+[node name="PlayerFighter2" parent="." instance=ExtResource("2_xo4ju")]
+
+[node name="PlayerFighter3" parent="." instance=ExtResource("2_xo4ju")]
+
+[node name="PlayerFighter4" parent="." instance=ExtResource("2_xo4ju")]
+
+[editable path="PlayerFighter"]
+[editable path="PlayerFighter2"]
+[editable path="PlayerFighter3"]
+[editable path="PlayerFighter4"]

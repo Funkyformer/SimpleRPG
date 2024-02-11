@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnjy8d7vd5rs7"]
+
+[ext_resource type="Script" path="res://combat_2.gd" id="1_1g26c"]
+[ext_resource type="PackedScene" uid="uid://15onxwnigxp0" path="res://party.tscn" id="1_7wvjt"]
+[ext_resource type="PackedScene" uid="uid://fdxy6lcr7wct" path="res://encounter_1.tscn" id="2_eo5o6"]
+
+[node name="Combat_2" type="Node2D"]
+script = ExtResource("1_1g26c")
+
+[node name="Party" parent="." instance=ExtResource("1_7wvjt")]
+position = Vector2(1031, 149)
+
+[node name="Encounter1" parent="." instance=ExtResource("2_eo5o6")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="choice" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -160.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="Attack" type="Button" parent="CanvasLayer/choice"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Attack"
+
+[node name="Block" type="Button" parent="CanvasLayer/choice"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Block"
+
+[node name="Escape" type="Button" parent="CanvasLayer/choice"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Escape"
+
+[connection signal="combat_end" from="Encounter1" to="." method="_on_encounter_1_combat_end"]
+[connection signal="next_player" from="Encounter1" to="Party" method="_on_encounter_1_next_player"]
+[connection signal="pressed" from="CanvasLayer/choice/Attack" to="Encounter1" method="_on_attack_pressed"]

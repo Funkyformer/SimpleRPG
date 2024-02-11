@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddgnug8dqc4bl"]
+
+[ext_resource type="Texture2D" uid="uid://bjndtvgyfk58g" path="res://img/tempPC.png" id="1_gjm05"]
+[ext_resource type="Script" path="res://player_fighter.gd" id="1_w3f67"]
+[ext_resource type="Texture2D" uid="uid://b33b8c0d7sntg" path="res://img/indicator.png" id="2_wj2op"]
+
+[node name="PlayerFighter" type="Node2D"]
+position = Vector2(993, 202)
+script = ExtResource("1_w3f67")
+metadata/_edit_group_ = true
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_gjm05")
+
+[node name="Focus" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(89, 0)
+rotation = 3.14159
+texture = ExtResource("2_wj2op")
+
+[node name="Health" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -82.0
+offset_right = 51.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0

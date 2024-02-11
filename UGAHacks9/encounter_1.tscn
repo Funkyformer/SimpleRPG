@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://fdxy6lcr7wct"]
+
+[ext_resource type="PackedScene" uid="uid://34r0sxogy45c" path="res://placeholder_enemy.tscn" id="1_2f3rd"]
+[ext_resource type="Script" path="res://encounter_1.gd" id="1_k7q2m"]
+
+[node name="Encounter1" type="Node2D"]
+position = Vector2(200, 150)
+script = ExtResource("1_k7q2m")
+
+[node name="placeholder_enemy" parent="." instance=ExtResource("1_2f3rd")]
+
+[node name="placeholder_enemy2" parent="." instance=ExtResource("1_2f3rd")]
+
+[node name="placeholder_enemy3" parent="." instance=ExtResource("1_2f3rd")]
+
+[node name="placeholder_enemy4" parent="." instance=ExtResource("1_2f3rd")]

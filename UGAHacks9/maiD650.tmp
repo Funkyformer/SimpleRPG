@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi001mog07v3s"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_2ekvk"]
+[ext_resource type="PackedScene" uid="uid://1vxfcac1iq6a" path="res://map.tscn" id="1_lbs2q"]
+[ext_resource type="PackedScene" uid="uid://dvwsqnbrdxyv7" path="res://player_character.tscn" id="2_25lrs"]
+[ext_resource type="PackedScene" uid="uid://cfsctb3qke8df" path="res://combat.tscn" id="4_fnbvd"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_2ekvk")
+
+[node name="Map" parent="." instance=ExtResource("1_lbs2q")]
+
+[node name="Player Character" parent="." instance=ExtResource("2_25lrs")]
+position = Vector2(181, 79)
+
+[node name="Combat" parent="." instance=ExtResource("4_fnbvd")]
+position = Vector2(1142, 326)
+
+[connection signal="combat_started" from="." to="Player Character" method="_on_main_combat_started"]
+[connection signal="player_move" from="Player Character" to="." method="_on_player_character_player_move"]
+[connection signal="combat_end" from="Combat" to="." method="_on_combat_combat_end"]
